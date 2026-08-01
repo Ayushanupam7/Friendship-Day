@@ -1097,7 +1097,7 @@ h1 {
 @media (max-width: 480px) {
   /* Enforce absolute no scroll on mobile */
   .slide {
-    padding: 1rem 1rem 1rem 3.2rem !important; /* Compact padding to clear left margin line */
+    padding: 2.2rem 1rem 1rem 3.2rem !important; /* Extra top padding so status bars do not hide the title */
     overflow-y: hidden !important; 
   }
 
@@ -1176,7 +1176,7 @@ h1 {
   }
   
   .main-illustration {
-    max-height: 140px !important;
+    max-height: 125px !important; /* Scaled down slightly to fit the new top padding */
   }
 
   /* Overlapping Polaroid Fan (Beautiful & fits screen width/height) */
@@ -1246,8 +1246,8 @@ h1 {
 
   /* Certificate Slide 9 - Extremely Compact & Clean */
   .certificate-preview-container {
-    max-width: 310px !important;
-    margin: 0 auto 0.4rem auto !important;
+    max-width: 290px !important; /* Scaled down slightly more to fit the new top padding */
+    margin: 0 auto 0.3rem auto !important;
   }
 
   .certificate-frame {
