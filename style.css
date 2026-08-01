@@ -1225,23 +1225,26 @@ h1 {
   .polaroid-gallery {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
+    gap: 6px !important;
     margin: 0.4rem 0 !important;
   }
   
   .polaroid-wrapper {
-    width: 115px !important;
-    margin: 0 -6px !important; /* Overlap cards slightly */
+    width: 95px !important;
+    margin: 0 -4px !important; /* Overlap cards slightly */
     z-index: 1;
     transition: all 0.3s ease;
   }
   
-  .polaroid-wrapper:nth-child(1) { transform: rotate(-8deg); }
-  .polaroid-wrapper:nth-child(2) { transform: rotate(2deg) translateY(-6px); z-index: 2; }
-  .polaroid-wrapper:nth-child(3) { transform: rotate(6deg); }
+  .polaroid-wrapper:nth-child(1) { transform: rotate(-6deg); }
+  .polaroid-wrapper:nth-child(2) { transform: rotate(3deg) translateY(-4px); z-index: 2; }
+  .polaroid-wrapper:nth-child(3) { transform: rotate(-4deg); }
+  .polaroid-wrapper:nth-child(4) { transform: rotate(5deg) translateY(-2px); }
+  .polaroid-wrapper:nth-child(5) { transform: rotate(-3deg); }
   
   .polaroid-wrapper:hover, .polaroid-wrapper:active {
     transform: scale(1.15) rotate(0deg) translateY(-8px) !important;
@@ -1249,12 +1252,12 @@ h1 {
   }
   
   .polaroid-photo-container {
-    height: 90px !important;
+    height: 75px !important;
   }
   
   .polaroid-caption {
-    font-size: 0.9rem !important;
-    margin-top: 4px !important;
+    font-size: 0.82rem !important;
+    margin-top: 3px !important;
   }
 
   /* Envelope slide scale */
