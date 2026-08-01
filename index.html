@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Friendship Day! 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Modern, playful, and handwriting fonts from Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@700&family=Sacramento&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Floating Audio Controller -->
+  <div class="audio-controls" id="audio-control-btn" title="Toggle Music">
+    <div class="music-wave" id="music-wave">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <span class="music-text">Music</span>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="https://assets.mixkit.co/music/preview/mixkit-warm-light-855.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Main Viewport Container -->
+  <div class="viewport-container">
+    <div class="phone-frame">
+
+      <!-- Inside Card Background Grid -->
+      <div class="notebook-grid"></div>
+      <!-- Left Red Margin Line -->
+      <div class="notebook-margin"></div>
+      <!-- Right Wavy Red Accent -->
+      <div class="wavy-accent"></div>
+
+      <!-- Slides Container -->
+      <div class="slides-wrapper">
+
+        <!-- Slide 1: Intro (OYEE!) -->
+        <section class="slide active" id="slide-1">
+          <div class="slide-content">
+            <h1 class="bounce-in title-oyee">OYEE!</h1>
+            <div class="responsive-split">
+              <div class="split-left">
+                <div class="text-group fade-in-delay">
+                  <p class="body-text text-accent">I made something for you</p>
+                  <p class="script-text">Do you want to see?</p>
+                </div>
+                <div class="btn-group fade-in-delay">
+                  <button class="btn btn-yes" onclick="goToSlide(3)">Yes</button>
+                  <button class="btn btn-no" id="btn-no" onclick="goToSlide(2)">No</button>
+                </div>
+              </div>
+              <div class="split-right">
+                <div class="image-container pop-in">
+                  <img src="assets/dog_oyee.png" alt="Cute puppy peering out" class="main-illustration">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 2: Rejection (HOW DARE YOU) -->
+        <section class="slide" id="slide-2">
+          <div class="slide-content">
+            <h1 class="shake title-angry">HOW DARE YOU</h1>
+            <div class="responsive-split">
+              <div class="split-left">
+                <div class="text-group">
+                  <p class="body-text text-dark">Did you just click No?! 🥺</p>
+                </div>
+                <div class="btn-group">
+                  <button class="btn btn-primary" onclick="goToSlide(1)">Go back</button>
+                </div>
+              </div>
+              <div class="split-right">
+                <div class="image-container pulse">
+                  <img src="assets/dog_sad.png" alt="Sad crying puppy" class="main-illustration">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3: Validation (That's a good gurlll) -->
+        <section class="slide" id="slide-3">
+          <div class="slide-content">
+            <div class="responsive-split">
+              <div class="split-left">
+                <div class="text-group">
+                  <p class="script-large text-accent">That's a good gurlll 🌻</p>
+                </div>
+                <div class="btn-group">
+                  <button class="btn btn-primary btn-pulse" onclick="goToSlide(4)">Click</button>
+                </div>
+              </div>
+              <div class="split-right">
+                <div class="image-container float">
+                  <img src="assets/dog_hearts.png" alt="Puppy blushing happily" class="main-illustration">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4: Wish (HAPPY FRIENDSHIP DAY) -->
+        <section class="slide" id="slide-4">
+          <div class="slide-content">
+            <h1 class="bounce-in title-wish">HAPPY FRIENDSHIP DAY 💖</h1>
+            <div class="responsive-split">
+              <div class="split-left">
+                <div class="text-group">
+                  <p class="sub-wish-primary">YOU ARE MY FAVORITE NOTIFICATION 🌸</p>
+                  <p class="sub-wish-secondary">STAY CUTIE, STAY HAPPY, STAY HEALTHY</p>
+                </div>
+                <div class="btn-group">
+                  <button class="btn btn-primary" onclick="goToSlide(5)">Next</button>
+                </div>
+              </div>
+              <div class="split-right">
+                <div class="image-container float">
+                  <img src="assets/dog_party.png" alt="Puppy wearing party hat" class="main-illustration">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5: Envelope (Tap here to open) -->
+        <section class="slide" id="slide-5">
+          <div class="slide-content justify-center">
+            <div class="envelope-wrapper" id="envelope-trigger">
+              <div class="envelope">
+                <img src="assets/envelope.png" alt="Envelope with ribbon" class="envelope-art">
+              </div>
+            </div>
+            <p class="script-large pulse text-accent" style="margin-top: 2rem;">Tap here to open</p>
+          </div>
+        </section>
+
+        <!-- Slide 6: Letter Content -->
+        <section class="slide" id="slide-6">
+          <div class="slide-content">
+            <div class="letter-container">
+              <div class="responsive-split">
+                <div class="split-left">
+                  <div class="letter-text">
+                    <p>"You are seen, you are heard, and you are loved, no matter what.</p>
+                    <p>If you ever feel unloved, remember that my love for you is boundless and endless." 💖</p>
+                  </div>
+                </div>
+                <div class="split-right justify-center">
+                  <div class="letter-media">
+                    <img src="assets/letter_hearts.png" alt="Heart keychains" class="letter-hearts-art">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-group" style="justify-content: flex-end; margin-top: 1.5rem; width: 100%;">
+              <button class="btn btn-primary btn-small" onclick="goToSlide(7)">Click here</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7: Gallery (I MISS YOU) -->
+        <section class="slide" id="slide-7">
+          <div class="slide-content">
+            <h1 class="title-miss">I MISS YOU 💖</h1>
+            <div class="polaroid-gallery">
+              <!-- Polaroid 1 -->
+              <div class="polaroid-wrapper">
+                <div class="polaroid-pin">📌</div>
+                <div class="polaroid-card">
+                  <div class="polaroid-photo-container">
+                    <img src="assets/friendship_scene1.png" alt="Friendship 1" id="polaroid-img-1" class="polaroid-img">
+                  </div>
+                  <p class="polaroid-caption" id="caption-1">Besties ✨</p>
+                </div>
+              </div>
+
+              <!-- Polaroid 2 -->
+              <div class="polaroid-wrapper">
+                <div class="polaroid-pin">📌</div>
+                <div class="polaroid-card">
+                  <div class="polaroid-photo-container">
+                    <img src="assets/friendship_scene2.png" alt="Friendship 2" id="polaroid-img-2" class="polaroid-img">
+                  </div>
+                  <p class="polaroid-caption" id="caption-2">Fun Times 🌸</p>
+                </div>
+              </div>
+
+              <!-- Polaroid 3 -->
+              <div class="polaroid-wrapper">
+                <div class="polaroid-pin">📌</div>
+                <div class="polaroid-card">
+                  <div class="polaroid-photo-container">
+                    <img src="assets/friendship_scene3.png" alt="Friendship 3" id="polaroid-img-3" class="polaroid-img">
+                  </div>
+                  <p class="polaroid-caption" id="caption-3">Forever 💛</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-group" style="margin-top: 1rem;">
+              <p class="script-text text-accent" style="font-size: 1.8rem;">You don't know how much you mean to me</p>
+            </div>
+
+            <div class="btn-group">
+              <button class="btn btn-primary" onclick="goToSlide(8)">Click here</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8: Surprise Box -->
+        <section class="slide" id="slide-8">
+          <div class="slide-content justify-center">
+            <h1 class="title-oyee bounce-in">Here's a surprise for you!!!</h1>
+            <div class="giftbox-wrapper" id="giftbox-trigger">
+              <div class="giftbox shake-loop">
+                <img src="assets/gift_box.png" alt="Wrapped gift box" class="gift-art">
+              </div>
+            </div>
+            <p class="script-large pulse text-accent" style="margin-top: 2rem;">Tap here</p>
+          </div>
+        </section>
+
+        <!-- Slide 9: Lifetime Guarantee & Certificate -->
+        <section class="slide" id="slide-9">
+          <div class="slide-content">
+            <h1 class="title-guarantee text-center">I give you lifetime guarantee that i will listen to your rants 📜
+            </h1>
+
+            <div class="responsive-split">
+              <div class="split-left">
+                <div class="certificate-preview-container">
+                  <!-- Animated background and border layout -->
+                  <div class="certificate-frame">
+                    <div class="certificate-body">
+                      <div class="cert-ribbon">🏆</div>
+                      <h3 class="cert-title">CERTIFICATE OF LIFETIME LISTENING</h3>
+                      <p class="cert-award">This is officially awarded to</p>
+                      <h2 class="cert-name" id="cert-recipient">My Best Friend</h2>
+                      <p class="cert-desc">For tolerating, sharing, and ranting without limits. I guarantee a listening
+                        ear, constant support, and unconditional validation forever.</p>
+                      <div class="cert-signatures">
+                        <div class="signature-line">
+                          <span class="signature-font">Akash</span>
+                          <label>Giver of Care</label>
+                        </div>
+                        <div class="signature-line">
+                          <span class="signature-font" style="color:#e55b5b;">∞</span>
+                          <label>Validity Duration</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="split-right">
+                <div class="image-container float" style="max-height: 120px; margin: 0.5rem 0;">
+                  <img src="assets/dog_rant.png" alt="Attentive puppy listening" class="main-illustration"
+                    style="max-height: 120px;">
+                </div>
+
+                <div class="btn-group" style="gap: 10px;">
+                  <button class="btn btn-primary" id="btn-download-cert">Download Certificate 📥</button>
+                  <button class="btn btn-secondary" onclick="resetApp()">Replay 🔄</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
