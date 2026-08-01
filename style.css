@@ -1134,7 +1134,7 @@ h1 {
 @media (max-width: 767px) {
   /* Enforce absolute no scroll on mobile */
   .slide {
-    padding: 2.2rem 1rem 1rem 3.2rem !important; /* Extra top padding so status bars do not hide the title */
+    padding: 2.2rem 1rem 3rem 3.2rem !important; /* Generous bottom padding to clear mobile navigation bars & home indicators */
     overflow-y: hidden !important; 
   }
 
@@ -1191,9 +1191,10 @@ h1 {
     font-size: 0.8rem !important;
   }
 
-  /* Compact button styling */
+  /* Compact button styling with bottom margin elevation */
   .btn-group {
     margin-top: 0.5rem !important;
+    margin-bottom: 1.8rem !important; /* Elevated from device bottom */
     gap: 0.8rem !important;
   }
 
@@ -1360,6 +1361,7 @@ h1 {
     gap: 8px !important;
     width: 100% !important;
     justify-content: center !important;
+    margin-bottom: 1.5rem !important;
   }
 
   #slide-9 .btn {
@@ -1370,5 +1372,7 @@ h1 {
   /* Tap hint adjustment on mobile */
   .tap-hint {
     margin-top: 1rem !important;
+    margin-bottom: 1.8rem !important;
   }
 }
+
