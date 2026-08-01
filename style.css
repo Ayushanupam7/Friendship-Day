@@ -356,6 +356,11 @@ h1 {
   color: var(--text-dark);
 }
 
+.tap-hint {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
 .sub-wish-primary {
   font-size: 1rem;
   font-weight: 700;
@@ -856,6 +861,10 @@ h1 {
   margin-bottom: 2px;
 }
 
+.signature-accent {
+  color: var(--primary-color);
+}
+
 .signature-line label {
   font-size: 0.6rem;
   font-weight: 600;
@@ -935,6 +944,34 @@ h1 {
   .signature-font {
     font-size: 1.2rem;
   }
+}
+
+/* Slide Specific Style Adjustments */
+#slide-6 .btn-group {
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+#slide-7 .text-group {
+  margin-top: 1rem;
+}
+
+#slide-7 .script-text {
+  font-size: 1.8rem;
+}
+
+#slide-9 .split-right .image-container {
+  max-height: 120px;
+  margin: 0.5rem 0;
+}
+
+#slide-9 .split-right .main-illustration {
+  max-height: 120px;
+}
+
+#slide-9 .btn-group {
+  gap: 10px;
 }
 
 /* ==========================================

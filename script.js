@@ -13,24 +13,26 @@ function toggleMusic() {
 
   if (music.paused) {
     music.play().then(() => {
-      audioBtn.classList.add('playing');
+      if (audioBtn) audioBtn.classList.add('playing');
     }).catch(e => console.log("Audio play error:", e));
   } else {
     music.pause();
-    audioBtn.classList.remove('playing');
+    if (audioBtn) audioBtn.classList.remove('playing');
   }
 }
 
-audioBtn.addEventListener('click', (e) => {
-  e.stopPropagation(); // Prevent trigger from slide navigation
-  toggleMusic();
-});
+if (audioBtn) {
+  audioBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent trigger from slide navigation
+    toggleMusic();
+  });
+}
 
 // Autoplay trigger on first click anywhere on the page
 function initAudioOnInteraction() {
   if (music && music.paused) {
     music.play().then(() => {
-      audioBtn.classList.add('playing');
+      if (audioBtn) audioBtn.classList.add('playing');
       removeInteractionListeners();
     }).catch(err => {
       console.log("Autoplay block, waiting for further action.", err);
@@ -81,25 +83,43 @@ function goToSlide(slideNum) {
 
 // Slide 5: Envelope Tap
 const envelopeTrigger = document.getElementById('envelope-trigger');
-if (envelopeTrigger) {
-  envelopeTrigger.addEventListener('click', () => {
+const envelopeText = document.querySelector('#slide-5 .tap-hint');
+
+function openEnvelope() {
+  if (envelopeTrigger && !envelopeTrigger.classList.contains('open')) {
     envelopeTrigger.classList.add('open');
     setTimeout(() => {
       goToSlide(6);
     }, 1100);
-  });
+  }
+}
+
+if (envelopeTrigger) {
+  envelopeTrigger.addEventListener('click', openEnvelope);
+}
+if (envelopeText) {
+  envelopeText.addEventListener('click', openEnvelope);
 }
 
 // Slide 8: Gift Box Tap
 const giftboxTrigger = document.getElementById('giftbox-trigger');
-if (giftboxTrigger) {
-  giftboxTrigger.addEventListener('click', () => {
+const giftboxText = document.querySelector('#slide-8 .tap-hint');
+
+function openGiftbox() {
+  if (giftboxTrigger && !giftboxTrigger.classList.contains('open-anim')) {
     giftboxTrigger.classList.add('open-anim');
     triggerConfetti(200); // Big explosion
     setTimeout(() => {
       goToSlide(9);
     }, 800);
-  });
+  }
+}
+
+if (giftboxTrigger) {
+  giftboxTrigger.addEventListener('click', openGiftbox);
+}
+if (giftboxText) {
+  giftboxText.addEventListener('click', openGiftbox);
 }
 
 // Polaroid editing disabled (file input removed)
